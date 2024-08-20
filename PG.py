@@ -28,7 +28,16 @@ def generatePassword(pwLeangth):
 
 # function to replace some characters with numbers
 def replaceWithNum(password):
-    pass
+    # Loop to potentially replace 1 or 2 characters in the password with a number
+    for i in range(random.randrange(1, 3)):
+        
+        replace_index = random.randrange(len(pword) // 2)# Choose a random index in the first half of the password to replace with a number
+        
+        pword = pword[0:replace_index] + str(random.randrange(10)) + pword[replace_index+1:]# Replace the character at the chosen index with a random digit (0-9)
+
+        return pword
+
+
 
 # function to replace some characters with uppercase letters
 def replacewithUpperCase(password):
