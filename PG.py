@@ -14,9 +14,7 @@ def generatePassword(pwLeangth):
 
         # Generate a random sequence of characters based on the length
         for j in range(i):
-
             nextLetterIndex = random.randrange(len(alphabet))  # Get a random index
-            
             password = password + alphabet[nextLetterIndex]  # Append the corresponding letter
         
         password = replaceWithNum(password)  # Replace some characters with numbers
@@ -27,21 +25,19 @@ def generatePassword(pwLeangth):
     return password_list  # Return the list of generated passwords
 
 # function to replace some characters with numbers
-def replaceWithNum(password):
+def replaceWithNum(pword):
     # Loop to potentially replace 1 or 2 characters in the password with a number
     for i in range(random.randrange(1, 3)):
-        
-        replace_index = random.randrange(len(pword) // 2)# Choose a random index in the first half of the password to replace with a number
-        
-        pword = pword[0:replace_index] + str(random.randrange(10)) + pword[replace_index+1:]# Replace the character at the chosen index with a random digit (0-9)
+        replaceIndex = random.randrange(len(pword) // 2)# Choose a random index in the first half of the password to replace with a number
+        pword = pword[0:replaceIndex] + str(random.randrange(10)) + pword[replaceIndex+1:]# Replace the character at the chosen index with a random digit (0-9)
 
         return pword
 
 
 
 # function to replace some characters with uppercase letters
-def replacewithUpperCase(password):
-    
+def replacewithUpperCase(pword):
+
     # Loop to potentially capitalize 1 or 2 characters in the password
     for i in range(random.randrange(1, 3)):
         replace_index = random.randrange(len(pword) // 2, len(pword))# Choose a random index in the second half of the password
@@ -50,7 +46,7 @@ def replacewithUpperCase(password):
     return pword
 
 
-# Main function to interact with the user and generate the passwords
+# Main function to interact with the user and gener2ate the passwords
 def main():
     numPassWord = int(input("Enter the number of passwords you want to generate: "))
 
