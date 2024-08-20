@@ -41,7 +41,14 @@ def replaceWithNum(password):
 
 # function to replace some characters with uppercase letters
 def replacewithUpperCase(password):
-    pass
+    
+    # Loop to potentially capitalize 1 or 2 characters in the password
+    for i in range(random.randrange(1, 3)):
+        replace_index = random.randrange(len(pword) // 2, len(pword))# Choose a random index in the second half of the password
+        pword = pword[0:replace_index] + pword[replace_index].upper() + pword[replace_index+1:]# Capitalize the character at the chosen index
+
+    return pword
+
 
 # Main function to interact with the user and generate the passwords
 def main():
